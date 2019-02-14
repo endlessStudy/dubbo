@@ -1,7 +1,7 @@
 # dubbo
 # 架构 https://dubbo.gitbooks.io/dubbo-user-book/content/preface/architecture.html
-  ![架构图片](https://dubbo.gitbooks.io/dubbo-user-book/content/sources/images/dubbo-architecture.jpg)
-调用关系说明
+  ![架构图片](https://dubbo.gitbooks.io/dubbo-user-book/content/sources/images/dubbo-architecture.jpg)<br>
+# 调用关系说明
   * 服务容器负责启动，加载，运行服务提供者。
   * 服务提供者在启动时，向注册中心注册自己提供的服务。
   * 服务消费者在启动时，向注册中心订阅自己所需的服务。
