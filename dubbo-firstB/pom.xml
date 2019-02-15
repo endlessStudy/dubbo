@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-first</artifactId>
+    <artifactId>dubbo-firstB</artifactId>
     <packaging>war</packaging>
     <dependencies>
         <dependency>
@@ -24,7 +24,25 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
-            <version>2.6.4</version>
+            <version>2.6.4</version><!-- 排除传递spring依赖-->
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-web</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--<dependency>
             <groupId>org.projectlombok</groupId>
@@ -40,16 +58,21 @@
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
-        <finalName>systemA</finalName>
+        <finalName>systemB</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>8088</port>
+                    <port>8777</port>
                     <path>/</path>
                     <server>tomcat7</server>
                 </configuration>
